@@ -29,7 +29,23 @@ router.post("/create-account", (req, res) => {
       }
     } else {
       // User registration successful
-      res.status(201).json({ message: "User registered successfully" });
+      // Log in the user immediately after registration
+      req.login(user, (err) => {
+        if (err) {
+          console.error("Error logging in user after registration:", err);
+          res
+            .status(206)
+            .json({
+              error:
+                "User account was created successfully but not logged in successfully",
+            });
+        }
+
+        // User is logged in successfully
+        res
+          .status(201)
+          .json({ message: "User registered and logged in successfully" });
+      });
     }
   });
 });
