@@ -20,10 +20,15 @@ router.post("/create-account", (req, res) => {
     if (err) {
       // Handle error during registration
       console.error("Error registering user:", err);
-      res.status(500).json({ error: "Internal server error" });
+      if (
+        err.message == "A user with the given username is already registered"
+      ) {
+        res.status(400).json({ error: "Username is already registered" });
+      } else {
+        res.status(500).json({ error: "Internal server error" });
+      }
     } else {
       // User registration successful
-      // You can add additional logic here if needed
       res.status(201).json({ message: "User registered successfully" });
     }
   });
