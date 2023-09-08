@@ -1,7 +1,7 @@
 const isLoggedIn = (req, res, next) => {
   try {
     if (!req.isAuthenticated()) {
-      return res.status(401).json({ message: "Unauthorized. Please log in." });
+      return res.status(402).json({ message: "Unauthorized. Please log in." });
     }
     next();
   } catch (err) {
