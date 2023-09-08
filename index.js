@@ -18,8 +18,8 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Allow requests from React local frontend during development
-app.use(cors({ origin: "http://localhost:5173", credentials: true }));
+// Allow CORS origin for React frontend
+app.use(cors({ origin: process.env.CORS_ORIGIN, credentials: true }));
 
 // Connect to MongoDB
 const dbUrl = process.env.DB_URL;
