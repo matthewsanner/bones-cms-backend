@@ -18,11 +18,6 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Serve static files from the 'dist' directory in production
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static(path.join(__dirname, "dist")));
-}
-
 // Allow CORS origin for React frontend
 app.use(cors({ origin: process.env.CORS_ORIGIN, credentials: true }));
 
@@ -79,5 +74,7 @@ app.use("/api/posts", postsRouter);
 app.use("/api/users", usersRouter);
 // app.use("/api/comments", commentsRouter);
 
-// Listen on port 3000
-app.listen(3000, () => console.log("Server listening on port 3000..."));
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
+});
