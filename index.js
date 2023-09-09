@@ -12,6 +12,7 @@ const passport = require("passport");
 const LocalStrategy = require("passport-local");
 const MongoStore = require("connect-mongo");
 const User = require("./models/user");
+const path = require("path");
 const app = express();
 
 // Middleware for body parsing (JSON and URL-encoded)
@@ -20,6 +21,13 @@ app.use(express.urlencoded({ extended: true }));
 
 // Allow CORS origin for React frontend
 app.use(cors({ origin: process.env.CORS_ORIGIN, credentials: true }));
+
+// Define a catch-all route to serve the main HTML file (only in production)
+if (process.env.NODE_ENV === "production") {
+  app.get("/*", (req, res) => {
+    res.sendFile(path.join(__dirname, "dist", "index.html"));
+  });
+}
 
 // Connect to MongoDB
 const dbUrl = process.env.DB_URL;
