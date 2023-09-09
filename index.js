@@ -57,8 +57,10 @@ const sessionConfig = {
   },
 };
 
-// Needed due to the Render using a proxy and frontend and backend being separate
-app.set("trust proxy", 1);
+// Needed in production due to Render.com using a proxy
+if (process.env.NODE_ENV === "production") {
+  app.set("trust proxy", 1);
+}
 app.use(session(sessionConfig));
 
 // Passport
