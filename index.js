@@ -18,6 +18,11 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+// Serve static files from the 'dist' directory in production
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static(path.join(__dirname, "dist")));
+}
+
 // Allow CORS origin for React frontend
 app.use(cors({ origin: process.env.CORS_ORIGIN, credentials: true }));
 
