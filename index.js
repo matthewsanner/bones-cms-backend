@@ -56,6 +56,8 @@ const sessionConfig = {
     sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
   },
 };
+
+// Needed due to the Render using a proxy and frontend and backend being separate
 app.set("trust proxy", 1);
 app.use(session(sessionConfig));
 
