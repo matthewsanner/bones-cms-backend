@@ -1,6 +1,5 @@
 const isLoggedIn = (req, res, next) => {
   try {
-    console.log(req.isAuthenticated());
     if (!req.isAuthenticated()) {
       return res.status(401).json({ message: "Unauthorized. Please log in." });
     }
