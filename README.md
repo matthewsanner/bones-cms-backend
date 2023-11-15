@@ -13,7 +13,7 @@ Utilizes Mongoose to better interact with the Mongo database. Schemas are outlin
 
 ## Installation
 
-If you would like to install Bones locally, make sure you first have [Node.js](https://nodejs.org/en/download) installed on your system, which includes npm. You should also have a Github account so that you can fork the repo from this page and then clone your fork to your local system.
+If you would like to install Bones backend locally, make sure you first have [Node.js](https://nodejs.org/en/download) installed on your system, which includes npm. You should also have a Github account so that you can fork the repo from this page and then clone your fork to your local system.
 
 ```bash
 git clone https://github.com/YOUR-USERNAME/YOUR-FORKED-REPOSITORY-NAME
