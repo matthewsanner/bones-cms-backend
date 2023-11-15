@@ -2,7 +2,7 @@
 
 ## Overview
 
-Bones CMS is a content management system intended to be easy-to-use and to customize and plug into an existing website. I envision it as an alternative to Wordpress or other paid alternatives for a small business to include a blog on their website, which can help to drive traffic from search engines. This project is currently in development with the basic structure of accounts and posts in place. I would like to make some improvements and additions before deploying this on behalf of clients.
+Bones CMS is an easy to use content management system that can be customized and plugged into an existing website. It serves as an alternative to Wordpress or other paid services for a small business to include a blog on their website, which can help to drive traffic from search engines. This project is currently in development with the basic structure of accounts and posts in place. I would like to make some improvements and additions before deploying this on behalf of clients.
 
 This repo contains only the backend API which is accessed by the completely separate [React frontend](https://github.com/matthewsanner/bones-cms-react).
 
