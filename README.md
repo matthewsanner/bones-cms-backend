@@ -26,7 +26,7 @@ npm install
 
 Now make sure that you also have the [React frontend](https://github.com/matthewsanner/bones-cms-react) installed separately, and follow the installation instructions there.
 
-You should also install a local versions of MongoDB or else set up a hosted database at [MongoDB Atlas](https://www.mongodb.com/atlas/database). Note the address of your database.
+You should also install a local version of MongoDB or else set up a hosted database at [MongoDB Atlas](https://www.mongodb.com/atlas/database). Note the address of your database.
 
 ## Usage
 
