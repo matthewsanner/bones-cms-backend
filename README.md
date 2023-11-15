@@ -30,7 +30,7 @@ You should also [install a local version](https://www.mongodb.com/docs/manual/in
 
 ## Usage
 
-You will want to create a local .env file filling in the values with your own. The frontend address, including port, would be discovered upon launching the [frontend](https://github.com/matthewsanner/bones-cms-react). It is necessary to include that value to avoid CORS issues when the frontend attempts to communicate with the backend. If you don't specify a port it will use 3000 by default.
+You will want to create a local .env file, filling in the values with your own. The frontend address, including port, would be discovered upon launching the [frontend](https://github.com/matthewsanner/bones-cms-react). It is necessary to include that value to avoid CORS issues when the frontend attempts to communicate with the backend. If you don't specify a port it will use 3000 by default.
 
 ```yaml
 ## .env file
