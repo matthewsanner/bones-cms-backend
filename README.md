@@ -42,7 +42,7 @@ CORS_ORIGIN=YOUR-FRONTEND-ADDRESS
 PORT=DESIRED-PORT
 ```
 
-To host the backend locally, you should launch the main javascript file using node. You could also use nodemon for automatic server refreshing on saves, if you have that installed.
+To host the backend locally, you should launch the index.js file using node. You could also use nodemon for automatic server refreshing on saves, if you have that installed.
 
 ```bash
 node index.js
