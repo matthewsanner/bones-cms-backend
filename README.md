@@ -1,11 +1,12 @@
 # Bones CMS Backend
 
+## Overview
+
 Bones CMS is a content management system intended to be easy-to-use and to customize and plug into an existing website. I envision it as an alternative to Wordpress or other paid alternatives for a small business to include a blog on their website, which can help to drive traffic from search engines. This project is currently in development with the basic structure of accounts and posts in place. I would like to make some improvements and additions before deploying this on behalf of clients.
 
 This repo contains only the backend API which is accessed by the completely separate [React frontend](https://github.com/matthewsanner/bones-cms-react).
 
-## The Code
-
+## Project Architecture
 Uses Node.js with Express server, incoming requests are routed through index.js to the routes folder where they are handled. I would ultimately like to separate out most of the actions handled in routes to a separate controllers folder. There are also some middlewares in the utilities folder.
 
 Utilizes Mongoose to better interact with the Mongo database. Schemas are outlined in the models folder.
@@ -49,13 +50,21 @@ node index.js
 nodemon index.js
 ```
 
+## Roadmap
+Features I would like to add:
+- comments
+- account roles
+- an admin page
+- customization options
+- account verification by email
+
+Currently Bones includes a navbar that I might like to get rid of except for on the admin page, such that the posts could easily fit into an existing website and it's structure and themes. It's nice to have in development though. I'm still envisioning how to best implement Bones with this kind of flexibility.
+
 ## Contributing
 
 This version of Bones has been entirely created by me thus far, although a [previous version](https://github.com/matthewsanner/bones-cms) using Express and EJS templates was created with assistance from [@betodute](https://github.com/betodute). Thanks Beto!
 
 If anyone is interested in contributing to this project, let's start with a conversation and then we could proceed to making an issue and I'd be happy to accept pull requests that fit well with the project!
-
-Some possible features I would like to add include comments, account roles, an admin page, customization options, and account verification by email. Currently Bones includes a navbar that I might like to get rid of except for on the admin page, such that the posts could easily fit into an existing website and it's structure and themes. It's nice to have in development though. I'm still envisioning how to best implement Bones with this kind of flexibility.
 
 Reach out to me at [matthewsannerdev@gmail.com](mailto:matthewsannerdev@gmail.com) with any questions, ideas, etc.!
 
