@@ -32,11 +32,11 @@ You should also install a local versions of MongoDB or else set up a hosted data
 
 You will want to create a local .env file filling in the values with your own. The frontend address, including port, would be discovered upon launching the [frontend](https://github.com/matthewsanner/bones-cms-react). It is necessary to include that value to avoid CORS issues when the frontend attempts to communicate with the backend. If you don't specify a port it will use 3000 by default.
 
-```javascript
-// .env file
-// locally hosted database address may look something like this- mongodb://localhost:27017/your-database-name
+```yaml
+## .env file
+## locally hosted database address may look something like this- mongodb://localhost:27017/your-database-name
 DB_URL=YOUR-DATABASE-ADDRESS 
-// can be any secret you like
+## can be any secret you like
 SECRET=YOUR-SECRET
 CORS_ORIGIN=YOUR-FRONT-END-ADDRESS
 PORT=DESIRED-PORT
