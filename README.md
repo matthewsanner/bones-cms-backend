@@ -7,9 +7,9 @@ Bones CMS is an easy to use content management system that can be customized and
 This repo contains only the backend API which is accessed by the completely separate [React frontend](https://github.com/matthewsanner/bones-cms-react).
 
 ## Project Architecture
-Uses Node.js with Express server, incoming requests are routed through index.js to the routes folder where they are handled. I would ultimately like to separate out most of the actions handled in routes to a separate controllers folder. There are also some middlewares in the utilities folder.
+Bones CMS backend uses Node.js with Express server, incoming requests are routed through index.js to the routes folder where they are handled. I would ultimately like to separate out most of the actions handled in routes to a separate controllers folder.  There are also some middleware in the utilities folder.
 
-Utilizes Mongoose to better interact with the Mongo database. Schemas are outlined in the models folder.
+For authentication and authorization, it uses Passport which stores an id in a cookie on the user's browser and logs session data to the Mongo database. It utilizes Mongoose to better interact with the Mongo database. Schemas are outlined in the models folder.
 
 ## Installation
 
