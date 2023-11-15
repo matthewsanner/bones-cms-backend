@@ -38,7 +38,7 @@ You will want to create a local .env file, filling in the values with your own. 
 DB_URL=YOUR-DATABASE-ADDRESS 
 ## can be any secret you like
 SECRET=YOUR-SECRET
-CORS_ORIGIN=YOUR-FRONT-END-ADDRESS
+CORS_ORIGIN=YOUR-FRONTEND-ADDRESS
 PORT=DESIRED-PORT
 ```
 
