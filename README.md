@@ -1,5 +1,9 @@
 # 🦴 Bones CMS Backend 🖥️
 
+## Live Demo
+
+Check out the live demo at [https://bones-cms-react.onrender.com/](https://bones-cms-react.onrender.com/). **Note:** It takes about 20 seconds to spin up.
+
 ## Overview
 
 Bones CMS is an easy to use content management system that can be customized and plugged into an existing website. It serves as an alternative to Wordpress or other paid services for a small business to include a blog on their website, which can help to drive traffic from search engines. This project is currently in development with the basic structure of accounts and posts in place.
