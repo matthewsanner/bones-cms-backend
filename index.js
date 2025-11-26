@@ -14,12 +14,17 @@ const MongoStore = require("connect-mongo");
 const User = require("./models/user");
 const app = express();
 
+// Allow CORS origin for React frontend
+const corsOptions = {
+  origin: process.env.CORS_ORIGIN,
+  credentials: true,
+};
+app.use(cors(corsOptions));
+app.options("*", cors(corsOptions));
+
 // Middleware for body parsing (JSON and URL-encoded)
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
-// Allow CORS origin for React frontend
-app.use(cors({ origin: process.env.CORS_ORIGIN, credentials: true }));
 
 // Connect to MongoDB
 const dbUrl = process.env.DB_URL;
