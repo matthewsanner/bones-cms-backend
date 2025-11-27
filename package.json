@@ -10,7 +10,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js",
     "build:frontend": "cd client && npm install && npm run build",
-    "copy:frontend": "rm -rf public && mkdir public && cp -R client/build/* public/",
+    "copy:frontend": "rm -rf public && mkdir public && cp -R client/dist/* public/",
     "render-build": "npm run build:frontend && npm run copy:frontend"
   },
   "author": "Matthew Sanner",
