@@ -11,6 +11,7 @@ const session = require("express-session");
 const passport = require("passport");
 const LocalStrategy = require("passport-local");
 const MongoStore = require("connect-mongo");
+const path = require("path");
 const User = require("./models/user");
 const app = express();
 
@@ -84,8 +85,6 @@ let usersRouter = require("./routes/users");
 app.use("/api/posts", postsRouter);
 app.use("/api/users", usersRouter);
 // app.use("/api/comments", commentsRouter);
-
-const path = require("path");
 
 app.use(express.static(path.join(__dirname, "public")));
 
