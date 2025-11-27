@@ -1,7 +1,7 @@
 {
-  "name": "bones-cms-backend",
+  "name": "bones-cms",
   "version": "1.0.0",
-  "description": "Simple CMS backend",
+  "description": "Simple CMS",
   "main": "index.js",
   "engines": {
     "node": "20.x"

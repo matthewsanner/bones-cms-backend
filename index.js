@@ -5,7 +5,7 @@ if (process.env.NODE_ENV !== "production") {
 
 // Dependencies
 const express = require("express");
-const cors = require("cors");
+// const cors = require("cors");
 const mongoose = require("mongoose");
 const session = require("express-session");
 const passport = require("passport");
@@ -16,12 +16,12 @@ const User = require("./models/user");
 const app = express();
 
 // Allow CORS origin for React frontend
-const corsOptions = {
-  origin: process.env.CORS_ORIGIN,
-  credentials: true,
-};
-app.use(cors(corsOptions));
-app.options("*", cors(corsOptions));
+// const corsOptions = {
+//   origin: process.env.CORS_ORIGIN,
+//   credentials: true,
+// };
+// app.use(cors(corsOptions));
+// app.options("*", cors(corsOptions));
 
 // Middleware for body parsing (JSON and URL-encoded)
 app.use(express.json());

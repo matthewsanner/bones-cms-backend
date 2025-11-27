@@ -1,61 +1,71 @@
-# 🦴 Bones CMS Backend 🖥️
+# 🦴 Bones CMS 🖥️
 
 ## Live Demo
 
-Check out the live demo at [https://bones-cms-react.onrender.com/](https://bones-cms-react.onrender.com/). **Note:** It takes about 20 seconds to spin up.
+Check out the live demo at [https://bones-cms.onrender.com/](https://bones-cms.onrender.com/). **Note:** It takes about 40 seconds to spin up.
 
 ## Overview
 
 Bones CMS is an easy to use content management system that can be customized and plugged into an existing website. It serves as an alternative to Wordpress or other paid services for a small business to include a blog on their website, which can help to drive traffic from search engines. This project is currently in development with the basic structure of accounts and posts in place.
 
-This repo contains only the backend API which is accessed by the completely separate [React frontend](https://github.com/matthewsanner/bones-cms-react).
-
 ## Project Architecture
-Bones CMS backend uses Node.js with Express server, incoming requests are routed through index.js to the routes folder where they are handled. I would ultimately like to separate out most of the actions handled in routes to a separate controllers folder.  There are also some middleware in the utilities folder.
 
-For authentication and authorization, it uses Passport which stores an id in a cookie on the user's browser and logs session data to the Mongo database. It utilizes Mongoose to better interact with the Mongo database. Schemas are outlined in the models folder.
+Bones CMS backend uses Node.js with Express server, incoming requests are routed through index.js to the routes folder where they are handled. I would ultimately like to separate out most of the actions handled in routes to a separate controllers folder. There are also some middleware in the utilities folder. For authentication and authorization, it uses Passport which stores an id in a cookie on the user's browser and logs session data to the Mongo database. It utilizes Mongoose to better interact with the Mongo database. Schemas are outlined in the models folder.
+
+Bones frontend is contained inside the 'client' folder and uses Vite for the React setup. The index.html file references main.jsx which in turn references App.jsx which contains the navbar and uses React Router to route to the particular pages and blog posts. The 'authenticated' state keeps track of whether a user is signed in or not. The frontend makes calls to the backend to retrieve session data and posts as well as to create, edit, and delete posts.
 
 ## Installation
 
-If you would like to install Bones backend locally, make sure you first have [Node.js](https://nodejs.org/en/download) installed on your system, which includes npm. You should also have a Github account so that you can fork the repo from this page and then clone your fork to your local system.
+If you would like to install Bones locally, make sure you first have [Node.js](https://nodejs.org/en/download) installed on your system, which includes npm. You should also have a Github account so that you can fork the repo from this page and then clone your fork to your local system.
 
 ```bash
 git clone https://github.com/YOUR-USERNAME/YOUR-FORKED-REPOSITORY-NAME
 ```
-Then you should install all dependencies locally.
+
+Then you should install all backend and frontend dependencies locally
 
 ```bash
+npm install # backend is at the root
+
+cd client
 npm install
 ```
-
-Now make sure that you also have the [React frontend](https://github.com/matthewsanner/bones-cms-react) installed separately, and follow the installation instructions there.
 
 You should also [install a local version](https://www.mongodb.com/docs/manual/installation/) of MongoDB or else set up a hosted database at [MongoDB Atlas](https://www.mongodb.com/atlas/database). Note the address of your database.
 
 ## Usage
 
-You will want to create a local .env file, filling in the values with your own. The frontend address, including port, would be discovered upon launching the [frontend](https://github.com/matthewsanner/bones-cms-react). It is necessary to include that value to avoid CORS issues when the frontend attempts to communicate with the backend. If you don't specify a port it will use 3000 by default.
+You will want to create a backend/root and frontend/client .env file, filling in the values with your own.
 
 ```yaml
-## .env file
-## locally hosted database address may look something like this- mongodb://localhost:27017/your-database-name
-DB_URL=YOUR-DATABASE-ADDRESS 
-## can be any secret you like
-SECRET=YOUR-SECRET
-CORS_ORIGIN=YOUR-FRONTEND-ADDRESS
+# backend/root .env file
+DB_URL=YOUR-DATABASE-ADDRESS # locally hosted database address may look something like this- mongodb://localhost:27017/your-database-name
+SECRET=YOUR-SECRET # can be any secret you like
 PORT=DESIRED-PORT
+
+# frontend/client .env file
+VITE_API_BASE_URL=YOUR-BACKEND-URL/api # possibly http://localhost:3000/api
 ```
 
-To host the backend locally, you should launch the index.js file using node. You could also use nodemon for automatic server refreshing on saves, if you have that installed.
+To host the backend locally, you should launch the index.js file using node or use the npm start command. You could also use nodemon for automatic server refreshing on saves, if you have that installed.
 
 ```bash
-node index.js
-## or use Nodemon
+npm start
+# or use Nodemon
 nodemon index.js
 ```
 
+To host the frontend locally, cd into the directory and use the npm run dev command.
+
+```bash
+cd client
+npm run dev
+```
+
 ## Roadmap
+
 Features I would like to add:
+
 - comments
 - account roles
 - an admin page
@@ -66,7 +76,7 @@ Currently Bones includes a navbar that I might like to get rid of except for on 
 
 ## Contributing
 
-This version of Bones has been entirely created by me thus far, although a [previous version](https://github.com/matthewsanner/bones-cms) using Express and EJS templates was created with assistance from [@betodute](https://github.com/betodute). Thanks Beto!
+This version of Bones has been entirely created by me thus far, although a [previous version](https://github.com/matthewsanner/bones-cms-original) using Express and EJS templates was created with assistance from [@betodute](https://github.com/betodute). Thanks Beto!
 
 If anyone is interested in contributing to this project, let's start with a conversation and then we could proceed to making an issue and I'd be happy to accept pull requests that fit well with the project!
 
