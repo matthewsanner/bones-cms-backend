@@ -50,7 +50,7 @@ const sessionConfig = {
   // name: "session",
   secret,
   resave: false,
-  saveUninitialized: true,
+  saveUninitialized: false,
   cookie: {
     // protect against cookies being extracted by a javascript attack
     httpOnly: true,
